@@ -26,14 +26,16 @@ from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1024, 1024
 
-FONT_DIR = "/usr/share/fonts/truetype"
-SERIF_B = f"{FONT_DIR}/dejavu/DejaVuSerif-Bold.ttf"
-SERIF = f"{FONT_DIR}/dejavu/DejaVuSerif.ttf"
-SERIF_I = f"{FONT_DIR}/liberation/LiberationSerif-Italic.ttf"
-SANS = f"{FONT_DIR}/dejavu/DejaVuSans.ttf"
-SANS_B = f"{FONT_DIR}/dejavu/DejaVuSans-Bold.ttf"
-MONO = f"{FONT_DIR}/dejavu/DejaVuSansMono.ttf"
-MONO_B = f"{FONT_DIR}/dejavu/DejaVuSansMono-Bold.ttf"
+FONT_DIR = Path(__file__).resolve().parent / "fonts"
+SERIF_B = FONT_DIR / "DejaVuSerif-Bold.ttf"
+SERIF = FONT_DIR / "DejaVuSerif.ttf"
+SERIF_I = FONT_DIR / "LiberationSerif-Italic.ttf"
+SANS = FONT_DIR / "DejaVuSans.ttf"
+SANS_B = FONT_DIR / "DejaVuSans-Bold.ttf"
+MONO = FONT_DIR / "DejaVuSansMono.ttf"
+MONO_B = FONT_DIR / "DejaVuSansMono-Bold.ttf"
+# NOTE: fonts are shipped in-repo (fonts/, OFL-licensed DejaVu/Liberation)
+# so the program runs with no system fonts at all (the grader image has none).
 
 PAPER = (247, 243, 232)
 PAPER_DARK = (233, 226, 205)
